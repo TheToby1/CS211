@@ -43,12 +43,12 @@ def dicmaker(tree1, charset):
     a = time.clock()
     global code
     global yay
-    dick = dict()
+    dic = dict()
     for stuff in charset:
         cat = stuff[0]
         code = []
         yay = ""
         stepper(tree1.root, cat)
-        dick[cat] = yay
+        dic[cat] = yay
     print "Dictionary made in %s" % (time.clock()-a)
-    return dick
+    return dic

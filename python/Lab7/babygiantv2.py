@@ -24,7 +24,7 @@ g = 2744
 p = 24852977
 c1 = 15268076
 c2 = 743675
-'''
+
 y = 34109547043
 g = 181673
 p = 85754635859
@@ -56,7 +56,13 @@ C = list(set(A)&set(B))
 privkey = B.index(C[0])*m+A.index(C[0])
 
 print 'the value of x is %s' % (privkey)
-
+'''
+y = 3
+g = 2
+p = 29
+c1 = 23
+c2 = 27
+privkey = 5
 value = pow(c1,(p-1-privkey),p)
 value = (value * c2) % p
 print "The message is:", value

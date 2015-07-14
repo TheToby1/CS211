@@ -4,15 +4,15 @@ import time
 
 def breaker(n):
     stick1 = 1.0
-    stickdick = set()
+    stickdic = set()
     for nums in range(0,n):
         stick2 = 0
         while stick2==0:
             stick2 = uniform(0,stick1)
         stick1-=stick2
-        stickdick.add(stick2)
-    stickdick.add(stick1)
-    return stickdick
+        stickdic.add(stick2)
+    stickdic.add(stick1)
+    return stickdic
 
 a = time.clock()
 times = 100000000

@@ -3,19 +3,19 @@ from random import uniform
 import time
 
 def breaker(n, stick1):
-    stickdick = set()
-    while len(stickdick)<=n:
+    stickdic = set()
+    while len(stickdic)<=n:
         stickbreak = 0
         while stickbreak == 0:
             stickbreak = uniform(0,stick1)
-        stickdick.add(stickbreak)
-    stickdick = sorted(list(stickdick))
+        stickdic.add(stickbreak)
+    stickdic = sorted(list(stickdic))
     count = 1
-    newsticks = stickdick
-    for nums in range(1,len(stickdick)):
+    newsticks = stickdic
+    for nums in range(1,len(stickdic)):
         count+=1
         for times in range(1,count):
-            newsticks[nums] -= stickdick[nums-times]
+            newsticks[nums] -= stickdic[nums-times]
     return sorted(newsticks)
 
 def trianglecheck(sticks):

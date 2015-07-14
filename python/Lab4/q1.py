@@ -16,7 +16,7 @@ charset = charset.items()#convert dictionary to list of lists
 charset.sort(key=lambda x: x[1], reverse = True)#sort it by second element reversed
 
 tree1 = maker(charset)
-dick = dicmaker(tree1, charset)
+dic = dicmaker(tree1, charset)
 
-comp(dick, sentence, charset)
+comp(dic, sentence, charset)
 print "All done in %s" % (time.clock()-a)

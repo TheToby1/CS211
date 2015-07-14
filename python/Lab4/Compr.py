@@ -3,14 +3,14 @@ import cStringIO
 import cPickle
 import time
 
-def comp(dick, sentence, charset):
+def comp(dic, sentence, charset):
     a = time.clock()
     b = time.clock()
     saved=""
     saver = ""
     bits = 0
     for car in sentence:
-        saved += dick[car]
+        saved += dic[car]
     while(len(saved)%8!=0):
         saved += '0'
         bits += 1
