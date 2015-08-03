@@ -1,6 +1,9 @@
 package lab1;
 import java.util.*;
-
+/* Write a Java program that uses a Monte Carlo algorithm to calculate the
+probability that next week’s lottery draw won’t have any consecutive
+pairs of numbers (e.g. 8 and 9 or 22 and 23). Six numbers are drawn
+from 1 to 45.*/
 public class Lab1 {
 	public static void main(String args[]){
 		int[] nums = new int[45];
