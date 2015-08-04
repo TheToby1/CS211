@@ -1,11 +1,6 @@
 '''Created on 14 Feb 2015
-Grab a stick. Break it in two. Now randomly break another piece in two. Carry out
-this process a total of n times.
-Write a program that takes n as input and outputs the probability that a triangle can
-be formed out of any three of the resulting pieces.
-
-This solution takes a stick breaks it, takes a random stick breaks it etc etc
-Gets an answer of roughy 19-20% for 2 breaks'''
+Grab a stick. Break it in two. Now randomly break another piece to make three
+pieces. What is the probability you can form a triangle?'''
 from random import uniform
 import time
 
@@ -22,17 +17,21 @@ def breaker(n, stick1):
 
 def trianglecheck(sticks):
     first = 0
-    while first<len(sticks)-2:
-        if sticks[first]+sticks[first+1]>sticks[first+2]:
-            return 1
+    for n in sticks:
         first+=1
+        second = first
+        for m in sticks[first:]:
+            second +=1
+            for o in sticks[second:]:
+                if n+m>o:
+                    return 1
     else:
         return 0
 
 a = time.clock()
-times = 100000
+times = 10000
 count = 0
-breaks = 2
+breaks = 30
 stick = 1.0
 for nums in range(0,times):
     sticks = breaker(breaks,stick)

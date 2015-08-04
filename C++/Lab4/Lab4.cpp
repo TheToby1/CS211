@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "node.h"
 #include "tree.h"
 #include <iostream>
@@ -19,9 +18,9 @@ public:
 	}
 };
 
-string fileinput(string place){
+string fileinput(const string place){
 	ifstream fin;
-	fin.open(place);
+	fin.open(place.c_str());
 	//takes the file in as a string
 	string x((std::istreambuf_iterator<char>(fin)), (std::istreambuf_iterator<char>()));
 	fin.close();
@@ -29,7 +28,7 @@ string fileinput(string place){
 }
 
 int stepper(node current, string answer){
-	if (current.getdata() != NULL){
+	if (current.getdata() != '\0'){
 		cout << current.getdata() << ": " << answer << endl;
 		j[current.getdata()] = answer;
 		return 0;
@@ -46,7 +45,7 @@ int stepper(node current, string answer){
 
 int main(){
 	string x = fileinput("test.txt");
-	//printf("%s", x.c_str());
+	printf("%s", x.c_str());
 
 	//Counts all characters
 	map<char, int> y;
@@ -70,7 +69,7 @@ int main(){
 		tree temp2 = prq.top();
 		node * temp4 = temp2.root;
 		prq.pop();
-		prq.push(tree(new node(NULL, temp3, temp4), temp1.getfreq()+temp2.getfreq()));
+		prq.push(tree(new node('\0', temp3, temp4), temp1.getfreq()+temp2.getfreq()));
 	}
 	tree huff = prq.top();
 	prq = priority_queue <tree, vector<tree>, comparefreq>();
@@ -101,6 +100,5 @@ int main(){
 	ofstream myfile;
 	myfile.open("comp.bin", ios::binary);
 	myfile << output;
-
 	return 0;
 }

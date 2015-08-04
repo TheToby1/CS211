@@ -1,4 +1,3 @@
-package lab1;
 import java.util.*;
 /* Write a Java program that uses a Monte Carlo algorithm to calculate the
 probability that next week’s lottery draw won’t have any consecutive

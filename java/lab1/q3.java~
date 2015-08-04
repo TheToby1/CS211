@@ -10,7 +10,6 @@ public class q3 {
 		int num = scan.nextInt();
 		int count = 0;
 		
-		//For example if num=4, if 3&4==0 print 4
 		if((num-- & num++) == 0){
 			System.out.println(num);
 		}

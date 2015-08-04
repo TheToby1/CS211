@@ -1,11 +1,6 @@
 '''Created on 14 Feb 2015
-Grab a stick. Break it in two. Now randomly break another piece in two. Carry out
-this process a total of n times.
-Write a program that takes n as input and outputs the probability that a triangle can
-be formed out of any three of the resulting pieces.
-
-This solution chooses n number of places to break the stick at before doing any breaks.
-It gets an answer of roughly 25% for 2 breaks'''
+Grab a stick. Break it in two. Now randomly break another piece to make three
+pieces. What is the probability you can form a triangle?'''
 from random import uniform
 import time
 

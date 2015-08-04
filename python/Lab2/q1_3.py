@@ -1,4 +1,10 @@
-#Created on 14 Feb 2015
+'''Created on 14 Feb 2015
+Grab a stick. Break it in two. Now randomly break another piece in two. Carry out
+this process a total of n times.
+Write a program that takes n as input and outputs the probability that a triangle can
+be formed out of any three of the resulting pieces.
+
+Does not work'''
 from random import uniform
 import time
 

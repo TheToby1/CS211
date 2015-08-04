@@ -1,4 +1,4 @@
-/*Constructor Class for generating lotto numbers*/
+
 public class Lottonum {
 	
 	private int num;

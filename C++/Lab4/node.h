@@ -9,7 +9,7 @@ public:
 	node * leftchild;
 	node * rightchild;
 	node(){
-		data = NULL;
+		data = '\0';
 		leftchild = nullptr;
 		rightchild = nullptr;
 	}
