@@ -1,4 +1,10 @@
-#Created on 27 Feb 2015
+'''Created on 27 Feb 2015
+Write a Java program which takes in a line from the user (using Scanner)
+and then outputs
+i) The sentence in ASCII
+ii) Each letter in the sentence and its frequency 
+Second version, much nicer presentation, good position for next weeks lab with huffman
+'''
 from collections import Counter
 import sys
 sentence = raw_input("Please type your sentence.")

@@ -1,3 +1,4 @@
+//Tree Constructor
 #ifndef Tree_H
 #define Tree_H
 

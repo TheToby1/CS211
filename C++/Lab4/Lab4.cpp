@@ -1,3 +1,13 @@
+/*
+ * Lab4.cpp
+ *
+ *  Created on: 30 July 2015
+ *      Author: toby
+ * The task is to complete the Huffman algorithm so that it takes in a sentence and
+ * outputs Huffman codes.
+ * Bonus marks for creating a compressor/de-compressor.
+ * Python version working. C++ version cannot get serializer working.
+ */
 #include "node.h"
 #include "tree.h"
 #include <iostream>
@@ -9,8 +19,10 @@
 #include <sstream>
 using namespace std;
 
+//All huffman codes stored in global variable j
 map<char, string> j;
 
+//Comparator for sorting the priority queue
 class comparefreq{
 public:
 	bool operator() (tree &t1, tree &t2) const{
@@ -18,6 +30,7 @@ public:
 	}
 };
 
+//File input
 string fileinput(const string place){
 	ifstream fin;
 	fin.open(place.c_str());
@@ -27,6 +40,7 @@ string fileinput(const string place){
 	return x;
 }
 
+//Steps through tree to find huffman codes
 int stepper(node current, string answer){
 	if (current.getdata() != '\0'){
 		cout << current.getdata() << ": " << answer << endl;
@@ -45,7 +59,7 @@ int stepper(node current, string answer){
 
 int main(){
 	string x = fileinput("test.txt");
-	printf("%s", x.c_str());
+	//printf("%s", x.c_str());
 
 	//Counts all characters
 	map<char, int> y;
@@ -60,8 +74,8 @@ int main(){
 		node * temp = new node(it->first, nullptr, nullptr);
 		prq.push(tree(temp, it->second));
 	}
-	//y.clear();
 	
+	//joins the lowest frequency trees together until only one tree is left
 	while(prq.size()>1){
 		tree temp1 = prq.top();
 		node * temp3 = temp1.root;
@@ -71,18 +85,24 @@ int main(){
 		prq.pop();
 		prq.push(tree(new node('\0', temp3, temp4), temp1.getfreq()+temp2.getfreq()));
 	}
+
+	//takes tree from priority queue and emptys queue
 	tree huff = prq.top();
 	prq = priority_queue <tree, vector<tree>, comparefreq>();
 	node current = *huff.root;
 	string answer = "";
+	//gives stepper the root
 	stepper(current, answer);
+	//prints all charcters with their huffman code
 	for (auto it = j.cbegin(); it != j.cend(); ++it){
 		std::cout << it->first << " " << it->second << "\n";
 	}
+	//steps through original string adding its huffman to the answer
 	for (char& c : x) {
 		answer += j[c];
 	}
 	//printf("%s", answer.c_str());
+	//adds trailing 0's for when de-compressing
 	while (answer.length() % 8 != 0){
 		answer += "0";
 	}

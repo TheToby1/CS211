@@ -1,5 +1,5 @@
 #Created on 24 Feb 2015
-
+#constructor for all objects
 class leaf(object):
     def __init__(self, letter):
         self.letter = letter

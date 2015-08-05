@@ -1,3 +1,4 @@
+//Node Constructor
 #ifndef NODE_H
 #define NODE_H
 

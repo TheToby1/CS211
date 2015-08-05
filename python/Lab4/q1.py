@@ -1,4 +1,9 @@
-# Created on 24 Feb 2015
+''' Created on 24 Feb 2015
+The task is to complete the Huffman algorithm so that it takes in a sentence and
+outputs Huffman codes.
+Bonus marks for compressor/de-compressor
+This is fully functinonal if a bit slow. Needs todying up and optimising
+'''
 from collections import Counter #used to count chars
 from treemaker import * #all my objects for the binary tree
 from Compr import comp
