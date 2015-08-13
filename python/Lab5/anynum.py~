@@ -56,7 +56,7 @@ for words in diction:
     count = 0
     tmp = charset.copy()
     if maxim>len(words):
-		break
+        break
     for char in words:
         if tmp[char] > 0:
             count+=1

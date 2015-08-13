@@ -32,7 +32,7 @@ filein.sort(key = len)
 diction = []
 for words in filein:
     if len(words) > len(letters): break
-    diction.append(words.lower())
+    diction.append(words)
 diction.sort(key = len, reverse = True)
 a = time.clock()
 
