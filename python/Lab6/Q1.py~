@@ -1,4 +1,7 @@
-#Created on 27 Mar 2015
+'''Created on 27 Mar 2015
+Write a program that takes encoded.txt as input and outputs the
+European language that it is in.Come up with some metric for quantifying
+how good the fit is.'''
 from collections import Counter
 import codecs
 
