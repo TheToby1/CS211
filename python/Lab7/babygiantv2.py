@@ -1,4 +1,7 @@
-#Created on 27 Mar 2015
+'''Created on 27 Mar 2015
+Alice’s public key is (24852977, 2744, 8414508). You eavesdrop on the line and
+observe Bob send her the cipher (15268076, 743675). Extract the message by any
+means.'''
 from math import ceil,sqrt
 import time
 
@@ -19,7 +22,7 @@ def modinv(a, m):
 
 a = time.time()
 
-'''y = 8414508
+y = 8414508
 g = 2744
 p = 24852977
 c1 = 15268076
@@ -56,13 +59,13 @@ C = list(set(A)&set(B))
 privkey = B.index(C[0])*m+A.index(C[0])
 
 print 'the value of x is %s' % (privkey)
-'''
-y = 3
+
+'''y = 3
 g = 2
 p = 29
 c1 = 23
 c2 = 27
-privkey = 5
+privkey = 5'''
 value = pow(c1,(p-1-privkey),p)
 value = (value * c2) % p
 print "The message is:", value
