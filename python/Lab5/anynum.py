@@ -14,6 +14,7 @@ from collections import Counter
 
 letters = ""
 notchar = True
+
 #Takes in user iput for the letters
 while notchar:
     notchar = False
@@ -25,6 +26,7 @@ while notchar:
         elif ((ord(letter) < 65)) | ((ord(letter) > 90) & (ord(letter) < 97)) | (ord(letter) > 122):
             notchar = True
             print "They were not all letters."
+
 charset = Counter()
 #Changes all chars to lower case
 letters = letters.lower()
